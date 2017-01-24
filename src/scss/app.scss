@@ -1,0 +1,158 @@
+@import "reset", "varables";
+
+html {
+    font-family: 'Nunito', sans-serif;
+    font-size: $base-font-size;
+    font-weight: 900;
+}
+body {
+    background: $base-color-bg;
+    color: $base-color-txt;
+    font-size: 2.5rem;
+    text-align: center;
+}
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+}
+.wrapper {
+    align-self: stretch;
+    order: 1;
+    display: flex;
+    flex-flow: column wrap;
+    align-content: center;
+    align-items: center;
+}
+h1, figcaption {
+    font-size: 1rem;
+    color: $link-color-txt;
+}
+.hidden, .not-use {
+    display: none;
+}
+
+//--------------------
+// Hero
+//--------------------
+figure {
+    margin: 2.5rem 0 4rem 0;
+    width: 100%;
+    order: 0;
+}
+h1, figcaption {
+    font-size: 1rem;
+    color: $link-color-txt;
+}
+.small {
+    transform: translate(0, 0);
+}
+.desktop {
+    display: none;
+}
+
+//--------------------
+// About
+//--------------------
+.about {
+    //max-width: 34.155rem;
+    width: 26.4rem;
+    height: 19rem;
+    border: 1.3rem solid $link-color-phase4;
+    order: 2;
+    margin: 2rem 0;
+}
+h2 {
+    padding: 3.2rem 0 3rem 0;
+}
+p {
+    font-size: 4rem;
+}
+
+//--------------------
+// Links
+//--------------------
+.links {
+    width: 26.4rem;
+    height: 23.8rem;
+    order: 1;
+
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+}
+li {
+    line-height: 2.64;
+
+    &:nth-child(1) {
+      background: $link-color-phase1;
+    }
+    &:nth-child(2) {
+      background: $link-color-phase2;
+    }
+    &:nth-child(3) {
+      background: $link-color-phase3;
+    }
+
+    & a {
+      display: block;
+      color: $link-color-txt;
+      text-decoration: none;
+      transition: .1s;
+    }
+}
+
+//--------------------
+// Media Queries
+//--------------------
+@media screen and (min-width: 415px) and (max-width: 767px) {
+    figure {
+        width: 82.5%;
+    }
+    .links, .about {
+        max-width: 45rem;
+        width: 70.5%;
+    }
+}
+@media screen and (min-width: 768px) {
+    .wrapper {
+        align-self: stretch;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        margin: 0 6rem 2rem;
+    }
+    .about, .links {
+        margin: 0;
+        height: 23.8rem;
+    }
+    .about {
+        order: 1;
+    }
+    .links {
+        order: 2;
+    }
+    h2 {
+        padding: 5.1rem 0 4rem 0;
+    }
+    figure {
+        margin: 5rem 0 7.5rem 0;
+    }
+    .small {
+        transform: translate(263px, 0);
+    }
+    .desktop {
+        display: block;
+    }
+}
+@media screen and (min-width: 1024px) {
+    .wrapper {
+        margin: 2rem 6rem 0;
+        order: 0;
+    }
+    figure {
+        order: 1;
+        margin: 0;
+    }
+}
